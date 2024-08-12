@@ -2,7 +2,7 @@ import can
 import time
 
 def parse_can_message(line):
-    # Remove os par  nteses e divida a linha por espa  os
+    # Remove os parênteses e divida a linha por espaços
     parts = line.strip().split()
     timestamp = float(parts[0][1:-1])
     can_interface = parts[1]
@@ -27,9 +27,8 @@ def send_can_messages(file_path, interface):
         except can.CanError:
           print("Message NOT sent")
         time.sleep(0.5)
-
 if __name__ == "__main__":
-    file_path = 'candump-2024-07-03_161118.log'  # Substitua pelo caminho do seu arquivo de mensagens
-    interface = 'can0'  # Substitua pela sua interface CAN
+    file_path = 'IMPERSONATION_ATCK.txt'  # Substitua pelo caminho do seu arquivo de mensagens
+    interface = 'can0'  
 
     send_can_messages(file_path, interface)
